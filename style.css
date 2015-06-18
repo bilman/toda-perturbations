@@ -85,7 +85,7 @@ a:hover {
     min-height: 200px;
     padding-right: 3%;
 	padding-left:inherit;
-    width: 70%;
+    width: 100%;
 	line-height:120%
 	-webkit-font-smoothing: antialiased;
 }
