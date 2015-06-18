@@ -41,7 +41,7 @@ a:hover {
 
 .boldlink{
 	text-decoration: none;
-	font-weight:bold;
+	font-weight:400;
 	/*color:#B7614E; /*midnightblue*/
 	color: teal;
 }
@@ -76,7 +76,7 @@ a:hover {
     margin-bottom: 3%;
     margin-top: 0;
     min-height: 200px;
-    padding-right: 3%;
+    padding-right: 0%;
 	padding-left:inherit;
     width: 100%;
 	line-height:120%
