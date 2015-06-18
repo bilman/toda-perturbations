@@ -68,9 +68,9 @@ a:hover {
 }
 #spacebar {
 /* 	background:url(img/noheader_reversed_particles.png); */
-	background:url(img/noheader_reversed-umich.png);
     display: block;
     min-height: 208px;
+    border-bottom: 2px solid gold;
 	/*min-height: 20px;*/
 }
 #contentText {
