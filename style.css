@@ -69,6 +69,7 @@ a:hover {
 #spacebar {
 /* 	background:url(img/noheader_reversed_particles.png); */
     display: block;
+    padding-left: 1%;
 /*     min-height: 208px; */
     border-bottom: 2px solid black;
 	/*min-height: 20px;*/
