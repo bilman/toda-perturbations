@@ -32,10 +32,12 @@ li {
 }
 a, a:link, a:visited {
     color: teal;
+    font-weight: 400;
     text-decoration: none;
 }
 a:hover {
     color: teal;
+    font-weight: 400;
     text-decoration: none;
 }
 
