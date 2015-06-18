@@ -62,7 +62,7 @@ a:hover {
 	font-size: 15px;
     min-height: 100%;
     overflow: auto;
-    width: 1000px;
+    width: 80%;
 }
 #spacebar {
 /* 	background:url(img/noheader_reversed_particles.png); */
@@ -72,13 +72,6 @@ a:hover {
 	/*min-height: 20px;*/
 }
 #contentText {
-/* 
-   border-bottom: 2px solid gold;
-   border-bottom-left-radius: 25px;
-   border-left: 2px solid gold;
-   border-color: gold;
-   border-width: 2px;
- */
     float: left;
     margin-bottom: 3%;
     margin-top: 0;
