@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<title>Hamiltonian Perturbations of the Toda Lattice. Bilman, Nenciu</title>
+		<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+		<link media="all" href="style.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/tomorrow.css">
+		<script type="text/javascript" src="js/prettify.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+		<script type="text/javascript"
+  			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+		<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-45852984-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+	 <body onLoad="prettyPrint()">
+	 	<div id="topLevelContainer">
+	 		<div id="spacebar">
+	 		<h1>Long-time asymptotics for Hamiltonian perturbations of the Toda lattice</h1>
+	 		<p>This website is devoted to a project investigating long-time asymptotics for Hamiltonian perturbations of the (completely-integrable) doubly-infinite Toda lattice.</p>
+	 		<p>Below we present computational results which complement the paper </p>
+	 		<div style="text-align: center;"><a href="http://arxiv.org/abs/1405.2310" target="_blank"><span class='bigger_center'>On the evolution of scattering data under perturbations of the Toda lattice</span></a></div> <p>by:</p>
+	 		<p>Deniz Bilman, University of Illinois at Chicago <a href="mailto:dbilma2@uic.edu" target="_blank"><i class="fa fa-envelope"></i></a> <a href="http://www.math.uic.edu/~bilman" target="_blank"><i class="fa fa-home"></i></a> <a href="https://scholar.google.com/citations?user=dkFHuEYAAAAJ&hl=en&oi=ao" target="_blank"><i class="fa fa-google"></i></a><br>
+	 		Irina Nenciu, University of Illinois at Chicago <a href="mailto:nenciu@uic.edu" target="_blank"><i class="fa fa-envelope"></i></a> <a href="http://www.math.uic.edu/~nenciu" target="_blank"><i class="fa fa-home"></i></a> <a href="https://scholar.google.com/citations?user=D1Xs-90AAAAJ&hl=en" target="_blank"><i class="fa fa-google"></i></a>
+	 		</p>	
+	 		</div>
+	 		<div id="contentText">
+            	<h3>Hamiltonian Perturbations of the Toda Lattice</h3>
+                <p>We study of perturbations of the doubly-infinite Toda lattice induced by perturbed interaction potentials of the form: $$ V_\varepsilon(r) = V_0(r) + \varepsilon u(r)\, ,$$where $V_0(r) = e^{-r} + r - 1$ is the Toda potential. Here $\varepsilon > 0$ is small and $u$ is fixed a perturbation function chosen so that the resulting system is globally well-posed in time and possesses solitary wave solutions. </p>
+                <div class="photo_long"><img alt="Potentials" src="img/V_vs_V0.jpg" width="100%"></div>
+            	               	<p>In the Flaschka variables, $(a,b)$, the equations of motion are given by
+\begin{equation}
+\begin{cases}
+\partial_t{a}_n = a_n\big(b_{n+1} - b_n\big)\\
+\partial_t{b}_n = 2\big(a_n^2 - a_{n-1}^2\big) + \frac{\varepsilon}{2} \big( u'\big(c_{n-1}\big) - u'\big(c_n \big)\big)\,
+\end{cases}
+\end{equation}
+where
+\begin{equation}\label{E:defn_c}
+c_n = \log{\left(\frac{1}{4a_n^2}\right)}\,,
+\end{equation}
+for all $n\in \mathbb{Z}$.
+
+The system above can be recasted as a perturbation of the isospectral evolution on Jacobi matrices:
+\begin{equation}
+\partial_t{L} = [P, L] + \varepsilon U\,,
+\end{equation}
+where 
+\begin{equation}
+L=
+\begin{pmatrix} 
+  \ddots    &\ddots & 	\ddots	 & 		   \\
+   \ddots & b_{n-1} & a_{n-1} & 0           \\
+ \ddots          & a_{n-1} & b_n    & a_n     & \ddots        	 \\
+	   & 0         & a_n    & b_{n+1} & \ddots       	 \\
+		   &		  & \ddots      &\ddots & \ddots         \\
+\end{pmatrix}
+%\end{equation*}
+\qquad\text{and}\qquad
+%\begin{equation*}
+P=
+\begin{pmatrix} 
+  \ddots    &\ddots & 	\ddots	 & 		   \\
+   \ddots & 0 & a_{n-1} & 0           \\
+ \ddots          & -a_{n-1} & 0    & a_n     & \ddots        	 \\
+	   & 0         & -a_n    &0 & \ddots       	 \\
+		   &		  & \ddots      &\ddots & \ddots         \\
+\end{pmatrix}\,,
+\end{equation}
+
+and $U$ is a diagonal matrix with
+\begin{equation}
+U_{nn} =\frac{1}{2} \big( u'\big(c_{n-1}\big) - u'\big(c_n \big)\big)\,.
+\end{equation}</p>
+
+<p>We consider solutions $(a,b)$ which satisfies
+\begin{equation}
+\sum_{n\in\mathbb{Z}}(1+| n |)\Big(\big|2 a_n - 1\big| + \big|b_n\big|\Big) < \infty\,.
+\end{equation}
+This implies that the discrete spectrum of $L$ consists of finitely many real simple eigenvalues, and $\sigma_{\textrm{ess}}(L)=[-1,1]$ is absolutely continuous.</p>
+
+<h2>Some plots and animations</h2>
+				<p style="clear:left;">A pure 1-soliton solution of the Toda lattice is evolving under perturbations $u(r) = r^2$ (the movie in the top pane) and $u(r)=r^3$ (the movie in the bottom pane), with $\varepsilon=0.05$ from time $t=0$ to $t=100$. The Toda soliton ($\varepsilon=0$) is plotted in blue and the solutions under the perturbed dynamics are plotted in red and purple. The animation is also available in full-screen mode.
+                <div class="video_container_large">
+                <!--<iframe id="vid" width="467" height="350" src="mov/t_clean_x2.mp4" frameborder="0" allowfullscreen autostart="false"></iframe>-->
+                <video width="100%" controls>
+                <source src="mov/a_comp_x2_x3.mp4" type="video/mp4">
+                <source src="mov/a_comp_x2_x3.webm" type="video/webm">
+                It seems like your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+                </video>
+                <a href="mov/a_comp_x2_x3.mp4" download="a_compare_x2_vs_x3_eps0_05.mp4">Download</a>
+                </div>
+                <p style="clear:left;">Below, the same pure 1-soliton solution of the Toda lattice is evolving under perturbations $u(r) = 1 - \cos r$ (the movie in the top pane) and $u(r)=r^2 + r^3$ (the movie in the bottom pane), with $\varepsilon=0.05$ from time $t=0$ to $t=100$. The Toda soliton ($\varepsilon=0$) is again plotted in blue and the solutions under the perturbed dynamics are plotted in red and purple. The animation is also available in full-screen mode.
+                <div class="video_container_large">
+                <!--<iframe id="vid" width="467" height="350" src="mov/t_clean_x2.mp4" frameborder="0" allowfullscreen autostart="false"></iframe>-->
+                <video width="100%" controls>
+                <source src="mov/a_comp_1_cos_x2x3.mp4" type="video/mp4">
+                <source src="mov/a_comp_1_cos_x2x3.webm" type="video/webm">
+                It seems like your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+                </video>
+                <a href="mov/a_comp_1_cos_x2x3.mp4" download="a_compare_1_cosx_vs_x2_plus_x3eps0_05.mp4">Download</a>
+                </div>
+                <p style="clear:left;">Below is a taller pure 1-soliton solution of the Toda lattice is evolving under perturbation $u(r) = r^2$, with $\varepsilon=0.05$ from time $t=0$ to $t=80$. The Toda soliton ($\varepsilon=0$) is again plotted in blue and the solution under the perturbed dynamics is plotted in red. The animation is also available in full-screen mode.
+                <div class="video_container_large">
+                <video width="100%" controls>
+                <source src="mov/a_comp_x2_k_1_2.mp4" type="video/mp4">
+                <source src="mov/a_comp_x2_k_1_2.webm" type="video/webm">
+                 It seems like your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+                </video>
+                <a href="mov/a_comp_x2_k_1_2.mp4" download="a_compare_x2_large_soliton_eps0_05.mp4">Download</a>
+                </div>
+        
+                <p style="clear:left;">In the following two plots, the top part of the wave is truncated to show the details of the dispersion.</p>
+                <p>Solitary wave solution of the lattice with $u(r)=r^2$ and $\varepsilon = 0.05$, followed by a dispersive tail.</p>
+                <div class="photo_long"><img alt="The solution" src="img/a_longtime_x2_right_zoom.jpg" width="100%"></div>
+                <p>Counter propagating dispersive wave in the lattice with $u(r)=r^2$ and $\varepsilon = 0.05$.</p>
+                <div class="photo_long"><img alt="The solution" src="img/a_longtime_x2_left_zoom.jpg" width="100%"></div>
+                <p>The plot below compares the right hand side of $\partial_t\lambda = \varepsilon\langle U \psi, \psi \rangle$ with $\partial_t\lambda$ obtained through the computed scattering data for the lattice with $u(r)=r^2$ and $\varepsilon = 0.05$, in a small time scale; and $\psi$ is the associated normalized eigenvector. We note that $\partial_t \lambda \sim 0$ for long time scales.</p>
+                <div class="photo_long"><img alt="The solution" src="img/uDotPsi_dlambda.jpg" width="100%"></div>
+                
+                <p style="clear:left;">Below, 2 equal sized clean solitary wave solutions of the perturbed lattice with $u(r) = r^2$ and $\varepsilon=0.05$ are interacting in a head-on collision. The animation is also available in full-screen mode.
+                <div class="video_container_large">
+                <!--<iframe id="vid" width="467" height="350" src="mov/t_clean_x2.mp4" frameborder="0" allowfullscreen autostart="false"></iframe>-->
+                <video width="100%" controls>
+                <source src="mov/collision_a.mp4" type="video/mp4">
+                <source src="mov/collision_a.webm" type="video/webm">
+                It seems like your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+                </video>
+                <a href="mov/collision_a.mp4" download="collision_a.mp4">Download</a>
+                </div>
+                
+                <p style="clear:left;">Absolute value of the reflection coefficient $|R(z;t)|$ associated with a clean solitary wave solution of the lattice with $u(r)=r^2$ and $\varepsilon = 0.05$, evolving from time $t=0$ to $t=100$.
+                <div class="video_container_large">
+                <!--<iframe id="vid" width="467" height="350" src="mov/t_clean_x2.mp4" frameborder="0" allowfullscreen autostart="false"></iframe>-->
+                <!--<video width="467" height="350" controls>-->
+                <video width="100%" controls>
+                <source src="mov/abs_r_clean_x2.mp4" type="video/mp4">
+                <source src="mov/abs_r_clean_x2.webm" type="video/webm">
+                It seems like your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+                </video>
+                <a href="mov/abs_r_clean_x2.mp4" download="abs_reflection_clean_solitarywave_x2_eps0_05.mo4">Download</a>
+                </div>
+                <p style="clear:left;">A new eigenvalue emerging from bottom of the ac spectrum in the lattice with $u(r)=r^2$ and $\varepsilon = 0.05$. The initial data used in this simulation is a purely dispersive solution of the Toda lattice, i.e. one for which $\sigma_{d}(L) = \varnothing$ at $t=0$.</p>
+                <div class="photo"><img alt="Bottom of the continuous spectrum" src="img/bottom_spec_machprec_k_06_x2_eps05.jpg" width="100%"></div>
+                 <p style="clear:left;">Below is the corresponding solution from time $t=0$ to $t=40$ in a lattice with $N=4096$ particles. $(a_n)_n$ is plotted in blue and $(b_n)$ is plotted in red.
+                <div class="video_container_large">
+                <!--<iframe id="vid" width="467" height="350" src="mov/t_clean_x2.mp4" frameborder="0" allowfullscreen autostart="false"></iframe>-->
+                <video width="100%" controls>
+                <source src="mov/line_noeig_machprec_k_06_x2_eps05.mp4" type="video/mp4">
+                <source src="mov/line_noeig_machprec_k_06_x2_eps05.webm" type="video/webm">
+                <!--<source src="mov/line_noeig_machprec_k_06_x2_eps05.ogv" type="video/ogg">-->
+                It seems like your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+                </video>
+                 <a href="mov/line_noeig_machprec_k_06_x2_eps05.mp4" download="ab_dispersive_x2_eps0_05_curve.mp4">Download</a>
+                </div>
+                <p style="clear:left;">This is the same animation, but the particles are not joined by curves.
+                <div class="video_container_large">
+                <!--<iframe id="vid" width="467" height="350" src="mov/t_clean_x2.mp4" frameborder="0" allowfullscreen autostart="false"></iframe>-->
+                <video width="100%" controls>
+                <source src="mov/marker_noeig_machprec_k_06_x2_eps05.mp4" type="video/mp4">
+                <source src="mov/marker_noeig_machprec_k_06_x2_eps05.webm" type="video/webm">
+       			It seems like your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+                </video>
+                <a href="mov/marker_noeig_machprec_k_06_x2_eps05.mp4" download="ab_dispersive_x2_eps0_05_dots.mp4">Download</a>
+                </div>
+            </div>
+	 	</div>
+	 </body>
+</html>
